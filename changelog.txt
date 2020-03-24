@@ -1,0 +1,16 @@
+0.0.1: 
+	- Made some text files
+	- Made the repl private
+	- Made a simple test
+	- Ideas:
+		- Map visualizing the spread of the virus?
+		- Way to communicate with others about school assignments and work?
+		- Overall dashboard of virus spread, statistics, and what people can do?
+		- how to socialize appropriately during quarentine
+		- skills and recipies to use
+		- view the nearest corona virus case
+		- ALL OF THE ABOVE
+		- all of the above but with end to end encryption to avoid sensorship
+
+1.0.0:
+	- I finished lol
