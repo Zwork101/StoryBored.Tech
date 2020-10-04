@@ -61,7 +61,7 @@ def info():
 
 @app.route('/info/us')
 def info_us():
-  yeet = requests.get("https://corona.lmao.ninja/states").content.decode("utf-8")
+  yeet = requests.get("https://corona.lmao.ninja/v3/covid-19/states").content.decode("utf-8")
   ok = json2html.convert(json = yeet)
   ok = ok.replace("state", "State")
   ok = ok.replace("cases", "Cases")
@@ -74,7 +74,7 @@ def info_us():
 
 @app.route('/info/world')
 def info_world():
-  yeet = requests.get("https://corona.lmao.ninja/jhucsse").content.decode("utf-8")
+  yeet = requests.get("https://corona.lmao.ninja/v3/covid-19/jhucsse").content.decode("utf-8")
   ok = json2html.convert(json = yeet)
   ok = ok.replace("country", "Country")
   ok = ok.replace("province", "Most Affected Province")
