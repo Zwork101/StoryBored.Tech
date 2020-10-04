@@ -5,7 +5,7 @@ from random import randint, uniform
 from replit import db
 
 from flask import Flask, render_template, send_file, redirect
-from gevent.server import WSGIServer
+from gevent.pywsgi import WSGIServer
 from json2html import json2html
 import numpy as np
 import requests
@@ -18,9 +18,11 @@ vids = np.load('vids.npy').tolist()
 visits = db.get('visits', 0)
 
 @app.after_request
-def after_request():
+def after_request(r):
+  global visits
   visits += 1
   db['visits'] = visits
+  return r
 
 @app.route('/')
 def index():
@@ -101,4 +103,4 @@ def place():
   return redirect("https://www.google.com/maps/@" + str(randx) + ',' + str(randy) + ',14z', code=302)
 
 if __name__ == '__main__':
-  WSGIServer(("0.0.0.0", 8080), app).run_forever()
+  WSGIServer(("0.0.0.0", 8080), app).serve_forever()
