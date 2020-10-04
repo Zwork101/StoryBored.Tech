@@ -14,3 +14,9 @@
 
 1.0.0:
 	- I finished lol
+
+1.1.0 
+  - Many internal changes to decrease repetitive code
+  - Public view counter
+  - Production-ready WSGI server
+  - Added run on repl.it badge
